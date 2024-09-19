@@ -17,9 +17,9 @@ int main() {
     // Receber os valores para cada variável
     printf("Atividade 2 - Ponteiros\n\n");
     printf("Digite valor para a variavel A: ");
-    scanf("%d", &a);
+    scanf(" %d", &a);
     printf("Digite valor para a variavel B: ");
-    scanf("%d", &b);
+    scanf(" %d", &b);
 
     //Inicializando os ponteiros com o endereço das variavéis
     pa = &a;
