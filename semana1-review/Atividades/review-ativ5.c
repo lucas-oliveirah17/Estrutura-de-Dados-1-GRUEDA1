@@ -5,8 +5,8 @@
   formato de uma matriz, ou seja, com linhas e colunas;
 • Entregue o arquivo fonte (.c ) na plataforma Moodle, na entrada atividade 5.
 */
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 int main() {
     // Declaração da matriz com 5 linhas e 5 colunas:

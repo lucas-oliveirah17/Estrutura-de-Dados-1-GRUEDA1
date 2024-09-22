@@ -19,8 +19,8 @@
         Deduções = INSS + IPRF;
   fim calculoDeduções
 */
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 // Declaração das variáveis globais
 float vantagens, salarioBruto, salarioFamilia, deducoes, INSS, IRPF;
 void calcVantagens(int numeroHoras, float salarioHora, int numeroFilhos, float valorPorFilho);
