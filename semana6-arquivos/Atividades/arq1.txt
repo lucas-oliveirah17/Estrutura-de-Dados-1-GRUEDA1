@@ -1,0 +1,1 @@
+Ola professor, alem das coisas solicitadas adicionei uma rotina para definir o nome dos dois arquivos. Essa rotina reconhece se o usuario escreveu a extensao do arquivo .txt no nome. Caso nao tenha feito ele ira adicionar.
