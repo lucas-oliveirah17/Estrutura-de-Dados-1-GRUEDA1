@@ -4,14 +4,23 @@
 #include <fcntl.h>  // Para _setmode()
 #include <io.h>     // Para _setmode()
 #include <time.h>
+#include <ctype.h>
+#include <windows.h>
+
+#define FORTE 15
+#define FRACA 8
+#define NORMAL 7
+#define ERRO 12
 
 void tabuleiro(int c[9][9], char opcao_borda);
 void imprimir_campos(int campos[9][9]);
-void limpar_tabuleiro();
+void limpar_tabuleiro(int campos[9][9]);
+void converter_entrada(char player_entrada[2], int coluna, int linha);
+void setColor(int color);
 
 int main() {
     // Inicializa variáveis e matriz
-    int campos[9][9] = { // matriz campos
+    int campos[9][9] = { // matriz campos inicializada
         {1, 2, 3, 4, 5, 6, 7, 8, 9},
         {2, 3, 4, 5, 6, 7, 8, 9, 1},
         {3, 4, 5, 6, 7, 8, 9, 1 ,2},
@@ -28,6 +37,7 @@ int main() {
     setlocale(LC_ALL, "");
     // Mudando o modo de saída para suportar UTF-8
     _setmode(_fileno(stdout), _O_U16TEXT);  // Habilita UTF-16 no Windows
+    wprintf(L"#########################################################\n####### SUDOKU CMD ######## By: Lucas S. Oliveira #######\n#########################################################\n\n");
     // Define a borda
     do {
         wprintf(L"Qual tipo de borda deseja? Simples = [S] | Dupla = [D]: ");
@@ -36,19 +46,37 @@ int main() {
             break;
         }
         else {
+            setColor(ERRO);
             wprintf(L"Entrada inválida! Tente novamente.\n");
+            setColor(NORMAL);
         }
     } while(1);
     // Exibe o tabuleiro
     tabuleiro(campos, opcao_borda);
-    printf("\n\n");
-    //imprimir_campos(campos);
+    wprintf(L"\nDeseja limpar o tabuleiro? Sim [S] | Não [N]: ");
+    getchar();
+    scanf("%c", &player_entrada);
+    if (toupper(player_entrada[0]) == 'S') {
+        limpar_tabuleiro(campos);
+    }
+    else if (toupper(player_entrada[0]) == 'N') {
+        wprintf(L"Limpeza cancelada!\n");
+    }
+    else {
+        setColor(ERRO);
+        wprintf(L"Entrada inválida! Tente novamente.\n\n");
+        setColor(NORMAL);
+    }
+    tabuleiro(campos, opcao_borda);
+    wprintf(L"\n\n");
     // Fim do programa
+    system("PAUSE");
     return 0;
 }
 
 void tabuleiro(int c[9][9], char opcao_borda) {
     int linha = 0;
+
     // Definindo os caracteres da borda
     wchar_t b_h, b_v, b_hv,
             b_ce, b_cd, b_cs, b_ci,
@@ -72,32 +100,108 @@ void tabuleiro(int c[9][9], char opcao_borda) {
         b_ce = b_dupla_ce; b_cd = b_dupla_cd; b_cs = b_dupla_cs; b_ci = b_dupla_ci;
         b_cse = b_dupla_cse; b_csd = b_dupla_csd; b_cie = b_dupla_cie; b_cid = b_dupla_cid;
     }
+
     // Imprimindo o tabuleiro no formato UTF-16
     for(int i = 0; i < 19; i++){
-        if(i == 0) {
-            wprintf(L"\n\t  %lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc\n",
-                    b_cse, b_h, b_h, b_h, b_cs, b_h, b_h, b_h, b_cs, b_h, b_h, b_h, b_cs, b_h, b_h, b_h, b_cs, b_h, b_h, b_h,
-                    b_cs, b_h, b_h, b_h, b_cs, b_h, b_h, b_h, b_cs, b_h, b_h, b_h, b_cs, b_h, b_h, b_h, b_csd);
+        if(i == 0) { // Linha Superior
+            setColor(FORTE);
+            wprintf(L"\n\t  %lc", b_cse);
+            for(int j = 0; j < 9; j++) {
+                wprintf(L"%lc%lc%lc", b_h, b_h, b_h);
+                if(j != 8) {
+                    wprintf(L"%lc", b_cs);
+                }
+                else {
+                    wprintf(L"%lc\n", b_csd);
+                }
+            }
+            setColor(FRACA);
         }
-        if(i == 18) {
-            wprintf(L"\t  %lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc\n",
-                    b_cie, b_h, b_h, b_h, b_ci, b_h, b_h, b_h, b_ci, b_h, b_h, b_h, b_ci, b_h, b_h, b_h, b_ci, b_h, b_h, b_h,
-                    b_ci, b_h, b_h, b_h, b_ci, b_h, b_h, b_h, b_ci, b_h, b_h, b_h, b_ci, b_h, b_h, b_h, b_cid);
+        if(i == 18) { // Linha Inferior
+            setColor(FORTE);
+            wprintf(L"\t  %lc", b_cie);
+            for(int j = 1; j <= 9; j++) {
+                wprintf(L"%lc%lc%lc", b_h, b_h, b_h);
+                if(j != 9) {
+                    wprintf(L"%lc", b_ci);
+                }
+                else {
+                    wprintf(L"%lc\n", b_cid);
+                }
+            }
         }
-        if(i % 2) {
-            wprintf(L"\t%ld %lc%lc%ld%lc%lc%lc%ld%lc%lc%lc%ld%lc%lc%lc%ld%lc%lc%lc%ld%lc%lc%lc%ld%lc%lc%lc%ld%lc%lc%lc%ld%lc%lc%lc%ld%lc%lc\n", linha + 1,
-                    b_v, ' ', c[linha][0], ' ', b_v, ' ', c[linha][1], ' ', b_v, ' ', c[linha][2], ' ', b_v, ' ', c[linha][3], ' ', b_v, ' ', c[linha][4], ' ',
-                    b_v, ' ', c[linha][5], ' ', b_v, ' ', c[linha][6], ' ', b_v, ' ', c[linha][7], ' ', b_v, ' ', c[linha][8], ' ', b_v);
+        if(i % 2) { // Linha com os campos
+            setColor(NORMAL);
+            wprintf(L"\t%ld ", linha + 1);
+            setColor(FORTE);
+            wprintf(L"%lc", b_v);
+            setColor(FRACA);
+            for(int j = 0; j < 9; j++) {
+                wprintf(L"%lc", ' ');
+                setColor(FORTE);
+                wprintf(L"%lc", c[linha][j] == 0 ? ' ' : c[linha][j] + '0');
+                setColor(FRACA);
+                wprintf(L"%lc", ' ');
+                if(!((j + 1) % 3)) {
+                    setColor(FORTE);
+                    wprintf(L"%lc", b_v);
+                    setColor(FRACA);
+                }
+                else {
+                    wprintf(L"%lc", b_v);
+                }
+            }
             linha++;
+            wprintf(L"\n");
         }
 
-        if(!(i % 2) && i != 0 && i != 18) {
-            wprintf(L"\t  %lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc\n",
-                    b_ce, b_h, b_h, b_h, b_hv, b_h, b_h, b_h, b_hv, b_h, b_h, b_h, b_hv, b_h, b_h, b_h, b_hv, b_h, b_h, b_h,
-                    b_hv, b_h, b_h, b_h, b_hv, b_h, b_h, b_h, b_hv, b_h, b_h, b_h, b_hv, b_h, b_h, b_h, b_cd);
+        if(!(i % 2) && i != 0 && i != 6 && i != 12 && i != 18) {
+            setColor(FORTE);
+            wprintf(L"\t  %lc", b_ce);
+            setColor(FRACA);
+            for(int j = 0; j < 9; j++) {
+                if(!((j + 1) % 3) && !(i % 6)) {
+                    setColor(FORTE);
+                }
+                else {
+                    setColor(FRACA);
+                }
+                wprintf(L"%lc%lc%lc", b_h, b_h, b_h);
+                if((j + 1) != 9) {
+                    if(!((j + 1) % 3)) {
+                        setColor(FORTE);
+                    }
+                    else {
+                        setColor(FRACA);
+                    }
+                    wprintf(L"%lc", b_hv);
+                }
+                else {
+                    setColor(FORTE);
+                    wprintf(L"%lc\n", b_cd);
+                    setColor(FRACA);
+                }
+            }
+        }
+
+        if(i == 6 || i == 12) {
+            setColor(FORTE);
+            wprintf(L"\t  %lc", b_ce);
+            for(int j = 0; j < 9; j++) {
+                wprintf(L"%lc%lc%lc", b_h, b_h, b_h);
+                if(j != 8) {
+                    wprintf(L"%lc", b_hv);
+                }
+                else {
+                    wprintf(L"%lc\n", b_cd);
+                }
+            }
+            setColor(FRACA);
         }
     }
-
+    setColor(NORMAL);
+    wprintf(L"\t    a   b   c   d   e   f   g   h   i \n");
+    //setColor(NORMAL);
     /*
     wprintf(L"\n\t  %lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc\n",
         b_cse, b_h, b_h, b_h, b_cs, b_h, b_h, b_h, b_cs, b_h, b_h, b_h, b_cs, b_h, b_h, b_h, b_cs, b_h, b_h, b_h,
@@ -174,8 +278,8 @@ void tabuleiro(int c[9][9], char opcao_borda) {
     wprintf(L"\t  %lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc%lc\n",
         b_cie, b_h, b_h, b_h, b_ci, b_h, b_h, b_h, b_ci, b_h, b_h, b_h, b_ci, b_h, b_h, b_h, b_ci, b_h, b_h, b_h,
         b_ci, b_h, b_h, b_h, b_ci, b_h, b_h, b_h, b_ci, b_h, b_h, b_h, b_ci, b_h, b_h, b_h, b_cid);
-*/
-    wprintf(L"\t    a   b   c   d   e   f   g   h   i \n");
+
+    wprintf(L"\t    a   b   c   d   e   f   g   h   i \n");*/
 }
 
 void imprimir_campos(int campos[9][9]) {
@@ -188,10 +292,52 @@ void imprimir_campos(int campos[9][9]) {
     }
 }
 
-void limpar_tabuleiro() {
-    system("cls");
+void limpar_tabuleiro(int campos[9][9]) {
+    int i, j;
+    for(i = 0; i < 9; i++) {
+        for(j = 0; j < 9; j++) {
+            campos[i][j] = 0;
+        }
+    }
 }
 
+void converter_entrada(char player_entrada[2], int coluna, int linha) {
+    switch(toupper(player_entrada[0])) {
+        case 'A':
+            coluna = 0;
+            break;
+        case 'B':
+            coluna = 1;
+            break;
+        case 'C':
+            coluna = 2;
+            break;
+        case 'D':
+            coluna = 3;
+            break;
+        case 'E':
+            coluna = 4;
+            break;
+        case 'F':
+            coluna = 5;
+            break;
+        case 'G':
+            coluna = 6;
+            break;
+        case 'H':
+            coluna = 7;
+            break;
+        case 'I':
+            coluna = 8;
+            break;
+    }
+    linha = 9 - player_entrada[1];
+}
 
+// Função para alterar a cor do texto no CMD
+void setColor(int color) {
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);  // Obtém o manipulador da saída padrão (CMD)
+    SetConsoleTextAttribute(hConsole, color);           // Define o atributo da cor
+}
 
 
