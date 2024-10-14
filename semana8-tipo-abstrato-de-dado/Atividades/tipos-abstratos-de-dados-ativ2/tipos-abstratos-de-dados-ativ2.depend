@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1728343260 source:e:\estrutura de dados 1 (grueda1)\semana8-tipo-abstrato-de-dados\atividades\exemplo\tipos-abstratos-de-dados-ativ2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"PTcart.h"
+
+1728342450 e:\estrutura de dados 1 (grueda1)\semana8-tipo-abstrato-de-dados\atividades\exemplo\tipos-abstratos-de-dados-ativ2\ptcart.h
+
+1728343476 source:e:\estrutura de dados 1 (grueda1)\semana8-tipo-abstrato-de-dados\atividades\exemplo\tipos-abstratos-de-dados-ativ2\ptcart.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"PTcart.h"
+
+1728343260 source:e:\estrutura de dados 1 (grueda1)\semana8-tipo-abstrato-de-dados\atividades\tipos-abstratos-de-dados-ativ2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"PTcart.h"
+
+1728342450 e:\estrutura de dados 1 (grueda1)\semana8-tipo-abstrato-de-dados\atividades\tipos-abstratos-de-dados-ativ2\ptcart.h
+
+1728343476 source:e:\estrutura de dados 1 (grueda1)\semana8-tipo-abstrato-de-dados\atividades\tipos-abstratos-de-dados-ativ2\ptcart.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"PTcart.h"
+

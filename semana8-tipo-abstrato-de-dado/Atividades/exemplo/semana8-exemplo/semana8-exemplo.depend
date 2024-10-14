@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1728341110 source:e:\estrutura de dados 1 (grueda1)\semana8-tipo-abstrato-de-dados\atividades\exemplo\semana8-exemplo\main.c
+	<stdio.h>
+	<locale.h>
+	"my_lib.h"
+
+1728340558 e:\estrutura de dados 1 (grueda1)\semana8-tipo-abstrato-de-dados\atividades\exemplo\semana8-exemplo\my_lib.h
+
+1728341420 source:e:\estrutura de dados 1 (grueda1)\semana8-tipo-abstrato-de-dados\atividades\exemplo\semana8-exemplo\my_lib.c
+	<stdio.h>
+	"my_lib.h"
+

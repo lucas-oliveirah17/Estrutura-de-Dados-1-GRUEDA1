@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1728691170 source:e:\estrutura de dados 1 (grueda1)\semana8-tipo-abstrato-de-dados\atividades\tipos-abstratos-de-dados-ativ3\my_library.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"my_library.h"
+
+1728693528 e:\estrutura de dados 1 (grueda1)\semana8-tipo-abstrato-de-dados\atividades\tipos-abstratos-de-dados-ativ3\my_library.h
+
+1728693528 source:e:\estrutura de dados 1 (grueda1)\semana8-tipo-abstrato-de-dados\atividades\tipos-abstratos-de-dados-ativ3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	"my_library.h"
+
