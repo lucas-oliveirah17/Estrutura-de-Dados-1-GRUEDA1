@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1730766723 source:c:\users\aluno\downloads\atividades\lista-estatica-ativ1\listasequencial.c
+	<stdio.h>
+	<stdlib.h>
+	"listaSequencial.h"
+
+1730767752 c:\users\aluno\downloads\atividades\lista-estatica-ativ1\listasequencial.h
+
+1730767942 source:c:\users\aluno\downloads\atividades\lista-estatica-ativ1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"listaSequencial.h"
+
+1731186331 source:z:\meu drive\ifsp guarulhos\material de estudos\estrutura de dados 1 (grueda1)\semana11-lista-estatica\atividades\lista-estatica-ativ1\listasequencial.c
+	<stdio.h>
+	<stdlib.h>
+	"listaSequencial.h"
+
+1731185205 z:\meu drive\ifsp guarulhos\material de estudos\estrutura de dados 1 (grueda1)\semana11-lista-estatica\atividades\lista-estatica-ativ1\listasequencial.h
+
+1731185869 source:z:\meu drive\ifsp guarulhos\material de estudos\estrutura de dados 1 (grueda1)\semana11-lista-estatica\atividades\lista-estatica-ativ1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"listaSequencial.h"
+
