@@ -39,7 +39,7 @@ int main() {
     al3.n3 = 3.4;
 
     setlocale(LC_ALL, "");
-    printf("Atividade 1 - Lista Estatica\n");
+    printf("Atividade 1 - Lista Sequencial Estatica\n");
     printf("\n\nTESTE DAS FUNÇÕES DA LISTA:");
 
     // Cria lista

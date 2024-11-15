@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1731542938 source:e:\estrutura de dados 1 (grueda1)\semana12-lista-dinamica\atividades\lista-dinamica-ativ1\listaligada.c
+	<stdio.h>
+	<stdlib.h>
+	"listaLigada.h"
+
+1731542578 e:\estrutura de dados 1 (grueda1)\semana12-lista-dinamica\atividades\lista-dinamica-ativ1\listaligada.h
+
+1731540884 source:e:\estrutura de dados 1 (grueda1)\semana12-lista-dinamica\atividades\lista-dinamica-ativ1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	"listaLigada.h"
+
+1731625248 source:z:\meu drive\ifsp guarulhos\material de estudos\estrutura de dados 1 (grueda1)\semana12-lista-dinamica\atividades\lista-dinamica-ativ1\listaligada.c
+	<stdio.h>
+	<stdlib.h>
+	"listaLigada.h"
+
+1731624351 z:\meu drive\ifsp guarulhos\material de estudos\estrutura de dados 1 (grueda1)\semana12-lista-dinamica\atividades\lista-dinamica-ativ1\listaligada.h
+
+1731628702 source:z:\meu drive\ifsp guarulhos\material de estudos\estrutura de dados 1 (grueda1)\semana12-lista-dinamica\atividades\lista-dinamica-ativ1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	"listaLigada.h"
+
