@@ -1,0 +1,40 @@
+# depslib dependency file v1.0
+1731974988 source:c:\users\aluno\downloads\semana13-fila-estatica-dinamica\atividades\ativ1-fila-estatica-dinamica\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	"fila.h"
+
+1731972699 c:\users\aluno\downloads\semana13-fila-estatica-dinamica\atividades\ativ1-fila-estatica-dinamica\fila.h
+
+1731974570 source:c:\users\aluno\downloads\semana13-fila-estatica-dinamica\atividades\ativ1-fila-estatica-dinamica\fila.c
+	<stdio.h>
+	<stdlib.h>
+	"fila.h"
+
+1731974570 source:c:\users\aluno\downloads\semana13-fila-estatica-dinamica\atividades\fila-estatica-dinamica-ativ1\fila.c
+	<stdio.h>
+	<stdlib.h>
+	"fila.h"
+
+1731972699 c:\users\aluno\downloads\semana13-fila-estatica-dinamica\atividades\fila-estatica-dinamica-ativ1\fila.h
+
+1731975133 source:c:\users\aluno\downloads\semana13-fila-estatica-dinamica\atividades\fila-estatica-dinamica-ativ1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	"fila.h"
+
+1731977947 source:z:\meu drive\ifsp guarulhos\material de estudos\estrutura de dados 1 (grueda1)\semana13-fila-estatica-dinamica\atividades\fila-estatica-dinamica-ativ1\fila.c
+	<stdio.h>
+	<stdlib.h>
+	"fila.h"
+
+1731977946 z:\meu drive\ifsp guarulhos\material de estudos\estrutura de dados 1 (grueda1)\semana13-fila-estatica-dinamica\atividades\fila-estatica-dinamica-ativ1\fila.h
+
+1731977946 source:z:\meu drive\ifsp guarulhos\material de estudos\estrutura de dados 1 (grueda1)\semana13-fila-estatica-dinamica\atividades\fila-estatica-dinamica-ativ1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	"fila.h"
+
