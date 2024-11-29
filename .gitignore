@@ -1,7 +1,9 @@
 .vscode
+codeblocks-20.03mingw-nosetup
 *.o
 *.exe
 *.pdf
 *.odt
 *.docx
 *.rar
+*.zip

@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1732414111 source:z:\meu drive\ifsp guarulhos\material de estudos\estrutura de dados 1 (grueda1)\semana14-pilha-estatica-dinamica\atividades\pilha-estatica-dinamica-ativ1\pilha.c
+	<stdio.h>
+	<stdlib.h>
+	"pilha.h"
+
+1732413336 z:\meu drive\ifsp guarulhos\material de estudos\estrutura de dados 1 (grueda1)\semana14-pilha-estatica-dinamica\atividades\pilha-estatica-dinamica-ativ1\pilha.h
+
+1732413817 source:z:\meu drive\ifsp guarulhos\material de estudos\estrutura de dados 1 (grueda1)\semana14-pilha-estatica-dinamica\atividades\pilha-estatica-dinamica-ativ1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	"pilha.h"
+

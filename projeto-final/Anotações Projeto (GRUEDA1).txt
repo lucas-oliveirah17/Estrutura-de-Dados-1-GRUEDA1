@@ -1,0 +1,96 @@
+Validação de Email
+1. Validação de Formato
+Verifique se o email segue o padrão geral de endereços de email. A estrutura básica é:
+
+nome@dominio.com
+
+Regras gerais para um email válido:
+Parte local (antes do @)
+
+Pode conter letras, números, pontos (.), hifens (-) e underscores (_).
+Não pode começar ou terminar com ponto (.).
+Pontos consecutivos (..) não são permitidos.
+Símbolo @
+
+Deve existir e separar a parte local do domínio.
+Domínio (depois do @)
+
+Deve conter pelo menos um ponto (.).
+Após o último ponto, deve haver pelo menos 2 caracteres (e.g., .com, .org, .br).
+
+Exemplo de Expressão Regular (Regex):
+Em muitas linguagens de programação, como C ou Python, você pode usar uma Regex para verificar o formato:
+^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+
+
+Validação Telefone
+1. Validação de Formato
+Estrutura geral para números de telefone:
+Local (sem código de área): 1234-5678
+Com código de área (DDD): (11) 1234-5678
+Celular no Brasil: (11) 91234-5678
+Formato internacional: +55 11 91234-5678
+Você precisa definir quais formatos seu sistema aceita e validar contra esses padrões.
+
+2. Regras Gerais
+Dígitos:
+
+O número deve conter apenas dígitos além de caracteres opcionais como +, (, ), - e espaços.
+O total de dígitos deve estar dentro de limites válidos:
+Telefone fixo no Brasil: 8 dígitos.
+Celular no Brasil: 9 dígitos.
+DDD (Código de Área):
+
+Deve ser válido para o país (e.g., no Brasil, DDDs variam entre 11 e 99).
+O código de área pode ser opcional ou obrigatório, dependendo do formato.
+Código do País:
+
+Opcional, mas útil para validação internacional.
+No Brasil, o código é +55.
+Separadores opcionais:
+
+Aceite ou remova caracteres como -, (), ou espaços para maior flexibilidade.
+
+
+Validação Celular
+ara validar números de celular no Brasil, você deve garantir que o número esteja no formato correto, com 9 dígitos após o DDD. Abaixo está uma abordagem passo a passo:
+
+1. Formatos Aceitos
+Os números de celular no Brasil podem aparecer em diferentes formatos. Exemplos válidos incluem:
+
+(11) 91234-5678
+11 91234-5678
+11912345678
++55 11 91234-5678
+2. Regras de Validação
+Código do País (opcional):
+
+O código internacional do Brasil é +55. A presença dele deve ser opcional.
+Código de Área (DDD):
+
+Deve conter 2 dígitos válidos entre 11 e 99.
+Pode ou não estar entre parênteses ().
+Número do Celular:
+
+Deve começar com o dígito 9.
+Deve conter 9 dígitos no total (sem contar o DDD).
+Separadores opcionais:
+
+Espaços, hifens e parênteses podem ser usados, mas não são obrigatórios.
+
+Códigos de DDD no Brasil
+Os códigos de DDD válidos no Brasil vão de 11 a 99, mas nem todos os números dentro dessa faixa são usados. Atualmente, os códigos de DDD no Brasil são regulamentados pela Anatel e seguem critérios regionais.
+
+Faixas de Códigos Não Utilizadas
+00 a 10: Nunca são usados como DDD.
+20, 23, 25, 26, 29, 30, 36, 39, 40, 52, 56, 57, 58, 59, 70, 72, 76, 78, 79, 80, 90: Esses números estão reservados ou não são atribuídos atualmente.
+
+Validação nome formato
+partículas de ligação em nomes próprios, como de, da, do, das, e dos, são escritas em minúsculas, enquanto o resto do nome, incluindo os sobrenomes ou partes mais significativas, começa com letra maiúscula.
+da - Exemplo: Maria da Silva
+do - Exemplo: João do Carmo
+das - Exemplo: Ana das Dores
+dos - Exemplo: Pedro dos Santos
+de la - Usado em nomes com origem em espanhol, como "Juan de la Cruz"
+de los - Também de origem espanhola, como em "Carlos de los Santos"
+e - Embora seja mais comum em nomes compostos, como em "Ana e Maria", em alguns casos pode funcionar como uma ligação.
